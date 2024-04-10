@@ -1,6 +1,8 @@
 import express from "express";
 import path from "path";
 import mealsRouter from "./api/meals.js";
+import reservationsRouter from "./api/reservations.js";
+import reviewsRouter from "./api/reviews.js";
 import cors from "cors";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -27,6 +29,8 @@ app.use(express.json());
 app.use(cors());
 
 router.use("/meals", mealsRouter);
+router.use("/reservations", reservationsRouter);
+router.use("/reviews", reviewsRouter);
 
 
 app.get("/future-meals", async(req, res) => {
