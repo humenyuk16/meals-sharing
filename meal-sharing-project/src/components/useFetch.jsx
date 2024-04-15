@@ -20,6 +20,7 @@ function useFetch(url) {
         if (isMounted) {
           setData(parsedData);
           setIsLoading(false);
+          console.log("Data fetched successfully:", parsedData);
         }
       } catch (error) {
         if (isMounted) {
@@ -33,6 +34,7 @@ function useFetch(url) {
 
     return () => {
       isMounted = false;
+      console.log("Component unmounted");
     };
   }, [url]);
 
