@@ -1,0 +1,82 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: Pacifico, sans-serif;
+
+  --background-color-light-theme: #f5f5f5;
+  --text-color-light-theme: #2d3233;
+  --border-color-light-theme: #ccc;
+}
+
+.MealsList-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-color-light-theme);
+}
+.MealsList-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(350px, 2fr)
+  ); /* Кожна колонка має ширину принаймні 250px, але може збільшуватися відповідно до розміру контейнера */
+  gap: 20px; /* Проміжок між стовпцями */
+}
+
+.MealsList-item {
+  border: 1px solid var(--border-color-light-theme);
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+
+.meal-card-price {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--text-color-light-theme);
+}
+
+.meal-card-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--text-color-light-theme);
+}
+
+.meal-card-description {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--text-color-light-theme);
+  font-family: Ojuju, sans-serif;
+  font-weight: 600;
+}
+
+.meal-card-image {
+  width: 18rem;
+  height: 23rem;
+  object-fit: cover;
+  margin: 2rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.meal-card-image:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #213b33;
+    -webkit-text-fill-color: #ffffeb;
+  }
+
+  .MealsList-item {
+    background-color: #36594e;
+  }
+}
