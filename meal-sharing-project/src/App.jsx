@@ -5,7 +5,7 @@ import MealsList from "./components/MealsList";
 function App() {
   return (
     <div className="App">
-      <MealsList></MealsList>
+      <MealsList />
     </div>
   );
 }
