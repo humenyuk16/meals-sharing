@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 
 function useFetch(url) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    let isMounted = true;
+    const abortController = new AbortController();
+    const signal = abortController.signal;
+
     async function fetchData() {
       try {
-        const response = await fetch(url);
+        const response = await fetch(url, { signal });
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -17,13 +19,12 @@ function useFetch(url) {
 
         const parsedData = await response.json();
 
-        if (isMounted) {
-          setData(parsedData);
-          setIsLoading(false);
-          console.log("Data fetched successfully:", parsedData);
-        }
+        setData(parsedData);
+        setIsLoading(false);
+        console.log("Data fetched successfully:", parsedData);
       } catch (error) {
-        if (isMounted) {
+        if (error.name === "AbortError") {
+        } else {
           setError(error);
           setIsLoading(false);
           console.error("There was an error fetching the data:", error);
@@ -33,8 +34,7 @@ function useFetch(url) {
     fetchData();
 
     return () => {
-      isMounted = false;
-      console.log("Component unmounted");
+      abortController.abort();
     };
   }, [url]);
 
