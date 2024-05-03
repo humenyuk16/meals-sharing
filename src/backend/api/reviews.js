@@ -84,4 +84,33 @@ router.delete("/:id", async(req,res)=>{
     }
   });
 
+  router.get("/:id/withMeal", async (req, res) => {
+    try {
+      const reviewId = req.params.id;
+      const reviews = await knex("Review")
+        .where("id", "=", reviewId)
+        .select();
+  
+      if (reviews.length === 0) {
+        res.status(404).send("Review not found");
+        return;
+      }
+
+      const meal = await knex("Meal")
+        .where("id", "=", reviews[0].meal_id) 
+        .select();
+  
+      if (meal.length === 0) {
+        res.status(404).send("Meal not found");
+        return;
+      }
+      res.json({ review: reviews[0], meal: meal[0] });
+  
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Something went wrong");
+    }
+  });
+  
+
   export default router;

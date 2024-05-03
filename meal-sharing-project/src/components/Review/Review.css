@@ -1,0 +1,145 @@
+/*Review Form*/
+.review-form {
+  display: flex;
+  height: 26rem;
+  width: 23rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.review-form label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--text-color-light-theme);
+  font-family: Ojuju, sans-serif;
+}
+
+.review-input {
+  width: 15rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color-light-theme);
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.review-stars {
+  height: 2rem;
+  width: 4rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color-light-theme);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-color-light-theme);
+}
+
+.review-form textarea {
+  width: 20rem;
+  height: 7rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color-light-theme);
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.review-button {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  text-align: center;
+  color: var(--text-color-light-theme);
+  font-family: Ojuju, sans-serif;
+  font-weight: 600;
+  background-color: #f6d70e;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color-light-theme);
+}
+
+.review-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/*Review All*/
+.Review-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adjust alignment as needed */
+}
+
+.Review-item {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: var(--background-color-light-theme);
+  color: #333;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.star {
+  color: #f7d61c;
+}
+
+.Review-title {
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: var(--text-color-light-theme);
+  margin: 2.5rem 0;
+  text-align: center;
+  font-family: Pacifico, sans-serif;
+}
+
+.Review-description {
+  font-size: 1.2rem;
+  color: var(--text-color-light-theme);
+  font-family: Ojuju, sans-serif;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.Review-date {
+  font-size: 1rem;
+}
+
+.Meal-review-info-title {
+  color: var(--text-color-light-theme);
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.Review-hr {
+  margin: 2rem 0;
+  border-top: 1px solid #ccc;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  height: 1px;
+}
+
+.Meal-review {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.Meal-review-description {
+  font-size: 1.2rem;
+  color: var(--text-color-light-theme);
+  font-style: italic;
+}

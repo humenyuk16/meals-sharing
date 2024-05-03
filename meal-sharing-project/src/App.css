@@ -1,21 +1,132 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
-  font-family: Pacifico, sans-serif;
+  font-family: Ojuju, sans-serif;
 
   --background-color-light-theme: #f5f5f5;
-  --text-color-light-theme: #2d3233;
+  --background-color-secondary: #2c2d2f;
+  --text-color-light-theme: #1f292b;
+  --text-color-secondary: #ece5e5;
   --border-color-light-theme: #ccc;
+  --background-color-accent: #d5e29f;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+/*Navbar*/
+
+.navbar {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+  color: var(--text-color-light-theme);
+}
+.navbar h1 {
+  color: #f1356d;
+  font-size: 1rem;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  text-decoration: none;
+  color: var(--text-color-light-theme);
+  padding: 2rem;
+}
+.navbar a:hover {
+  color: #f1356d;
+}
+
+.logo {
+  width: 110px;
+  height: 70px;
+  margin: 0 2rem;
+  border-radius: 50%;
+}
+
+/*Home page*/
+
+.MealsList-container-limited {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 2fr));
+  gap: 2rem;
+  margin: 7rem 2rem 1rem;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage-title {
+  font-family: Pacifico, sans-serif;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-color-light-theme);
+}
+
+.homepage-description {
+  color: var(--text-color-light-theme);
+  font-size: 24px;
+  font-weight: bold;
+  backdrop-filter: blur(5px); /* Apply the blur effect */
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.homepage-link {
+  font-size: 1.5rem;
+  font-family: Pacifico, sans-serif;
+  color: var(--text-color-light-theme);
+  margin: 2rem 0;
+}
+
+.homepage-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: blur(3px);
+}
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+}
+
+/*Meals List*/
 
 .MealsList-title {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   text-align: center;
   color: var(--text-color-light-theme);
+  font-family: Pacifico, sans-serif;
 }
+
 .MealsList-container {
   display: grid;
   grid-template-columns: repeat(
@@ -23,6 +134,7 @@
     minmax(350px, 2fr)
   ); /* Кожна колонка має ширину принаймні 250px, але може збільшуватися відповідно до розміру контейнера */
   gap: 20px; /* Проміжок між стовпцями */
+  margin-bottom: 3rem;
 }
 
 .MealsList-item {
@@ -30,8 +142,18 @@
   padding: 10px;
   border-radius: 0.5rem;
 }
+.MealsList-item a {
+  text-decoration: none;
+}
+
+.MealsList-item:hover {
+  cursor: pointer;
+}
+
+/*Meal Card*/
 
 .meal-card-price {
+  font-family: Pacifico, sans-serif;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -39,6 +161,7 @@
 }
 
 .meal-card-title {
+  font-family: Pacifico, sans-serif;
   font-size: 1.4rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
@@ -70,6 +193,211 @@
   cursor: pointer;
 }
 
+/*Meal Details*/
+.Meal-detail-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.MealDetail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.MealDetail-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.MealDetail-title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--text-color-light-theme);
+  font-family: Pacifico, sans-serif;
+}
+
+.MealDetail-image {
+  height: 40rem;
+  width: 32rem;
+  object-fit: cover;
+
+  border-radius: 0.5rem;
+}
+
+.MealDetail-info {
+  height: 34rem;
+  width: 29rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 2rem;
+  background-color: #e9ecf4;
+  border-radius: 0.5rem;
+  padding: 3rem;
+}
+
+.MealDetail-price {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--text-color-light-theme);
+  font-family: Pacifico, sans-serif;
+}
+
+.MealDetail-location,
+.MealDetail-reservations {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--text-color-light-theme);
+}
+
+.MealDetail-description {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--text-color-light-theme);
+  font-family: Ojuju, sans-serif;
+  font-weight: 600;
+}
+
+.add-meal-form {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color-light-theme);
+  font-family: Ojuju, sans-serif;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.add-meal-form input {
+  width: 18rem;
+  height: 2rem;
+  margin: 0.1rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color-light-theme);
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+  font-family: Ojuju, sans-serif;
+  font-weight: 600;
+  color: var(--text-color-light-theme);
+}
+
+.add-meal-form textarea {
+  width: 18rem;
+  height: 5rem;
+  margin: 0.1rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color-light-theme);
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text-color-light-theme);
+}
+.add-meal-form label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+
+  color: var(--text-color-light-theme);
+  font-family: Ojuju, sans-serif;
+  font-weight: 600;
+}
+
+.add-meal-buttons-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.add-meal-button-submit,
+.add-meal-button-cancel {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  text-align: center;
+  color: var(--text-color-light-theme);
+  font-family: Ojuju, sans-serif;
+  font-weight: 600;
+  background-color: #d5e29f;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color-light-theme);
+}
+.add-meal-button-cancel {
+  background-color: #f6a093;
+}
+
+/*Footer*/
+footer {
+  text-align: center;
+  background-color: var(--background-color-secondary);
+  color: var(--text-color-secondary);
+  padding: 1rem 0;
+  margin-top: 3rem;
+}
+
+.footer-rights {
+  font-size: 1.2rem;
+}
+
+/*Modal Form*/
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+  font-family: Pacifico, sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #213b33;

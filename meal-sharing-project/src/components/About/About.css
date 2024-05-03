@@ -1,0 +1,84 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  margin: 5rem 0;
+  color: var(--text-color-light-theme);
+  font-family: Pacifico, sans-serif;
+  font-weight: 600;
+}
+
+.first-paragraph,
+.second-paragraph {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin: 2rem;
+  text-align: center;
+  color: var(--text-color-light-theme);
+  font-family: Ojuju, sans-serif;
+  font-weight: 600;
+  background-color: rgba(246, 246, 234, 0.6);
+  box-shadow: 0 0 10px 0 rgba(246, 246, 234, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 80rem;
+}
+
+.image-about {
+  width: 30rem;
+  height: 20rem;
+  object-fit: cover;
+  margin: 2rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.share-experience {
+  padding: 2rem;
+  width: 50rem;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.share-experience h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-color-light-theme);
+  font-family: Pacifico, sans-serif;
+  font-weight: 600;
+}
+
+.share-experience p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--text-color-light-theme);
+  font-family: Ojuju, sans-serif;
+  font-weight: 600;
+}
+
+.share-experience button {
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-family: Pacifico, sans-serif;
+  font-size: 1.2rem;
+  background-color: var(--background-color-accent);
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.share-experience button:hover {
+  background-color: #e74c3c; /* Adjust hover color as needed */
+}
