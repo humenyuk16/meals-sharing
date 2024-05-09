@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 
-function useFetch(url) {
+function useFetch(path) {
+  const baseUrl =
+    "https://dpg-cotlqdocmk4c73auabj0-a.frankfurt-postgres.render.com";
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -11,7 +13,7 @@ function useFetch(url) {
 
     async function fetchData() {
       try {
-        const response = await fetch(url, { signal });
+        const response = await fetch(baseUrl + path, { signal });
 
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -36,7 +38,7 @@ function useFetch(url) {
     return () => {
       abortController.abort();
     };
-  }, [url]);
+  }, [path]);
 
   return { data, isLoading, error };
 }
