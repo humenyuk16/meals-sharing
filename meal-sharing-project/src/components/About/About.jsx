@@ -38,7 +38,7 @@ const About = () => {
           alt="meal-sharing"
           className="image-about"
         />
-        <p>
+        <p className="about-paragraph">
           At <i>Meal-sharing</i>, our mission is to foster meaningful
           connections and strengthen relationships through the shared experience
           of food. We believe that every meal is an opportunity for connection,
