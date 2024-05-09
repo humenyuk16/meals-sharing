@@ -13,7 +13,7 @@ const Meal = ({ meal }) => {
         />
         <h3 className="meal-card-title">{meal.title}</h3>
         <p className="meal-card-description">{meal.description}</p>
-        <p className="meal-card-price">Price: ${meal.price}</p>
+        <p className="meal-card-price">Price: {meal.price}kr</p>
       </Link>
     </div>
   );
