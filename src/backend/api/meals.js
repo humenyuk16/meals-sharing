@@ -21,14 +21,14 @@ router.get("/", async (req, res) => {
         "meal.title",
         "meal.max_reservations",
         "meal.price",
-        "meal.when",
+        "meal.when_date",
         "meal.description",
         "meal.location",
         "meal.image_url",
       ])
       .countDistinct("reservation.id as total_reservations")
       .leftJoin("reservation", "meal.id", "=", "reservation.meal_id")
-      .groupBy("meal.id", "meal.title", "meal.max_reservations", "meal.price", "meal.when", "meal.description", "meal.location", "meal.image_url");
+      .groupBy("meal.id", "meal.title", "meal.max_reservations", "meal.price", "meal.when_date", "meal.description", "meal.location", "meal.image_url");
 
     
 
@@ -58,11 +58,11 @@ router.get("/", async (req, res) => {
     }
 
     if (dateAfter !== undefined) {
-      query.where("meal.when", ">", dateAfter);
+      query.where("meal.when_date", ">", dateAfter);
     }
 
     if (dateBefore !== undefined) {
-      query.where("meal.when", "<", dateBefore);
+      query.where("meal.when_date", "<", dateBefore);
     }
 
 
