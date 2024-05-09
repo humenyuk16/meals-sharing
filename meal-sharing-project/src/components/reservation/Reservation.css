@@ -45,3 +45,31 @@
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
 }
+
+@media screen and (max-width: 768px) {
+  .reservation-form {
+    width: 40rem;
+    height: 20rem;
+    margin: 2rem;
+  }
+
+  .modal-content {
+    width: 25rem;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .reservation-form input {
+    color: #171714;
+  }
+
+  .ReservationForm-title {
+    color: #12110d;
+  }
+
+  .book-seat,
+  .reservation-button {
+    background-color: #f0e3ae;
+  }
+}

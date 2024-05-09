@@ -50,10 +50,47 @@
 .footer-social-icons a {
   color: #fff;
   margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .footer-rights {
   margin-top: 2rem;
   font-size: 0.9rem;
   flex-basis: 100%;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .footer-column h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-social-icons {
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .footer-column h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Media Queries for Tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer-column {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
 }

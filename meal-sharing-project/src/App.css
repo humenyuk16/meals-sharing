@@ -389,11 +389,131 @@ body {
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #2e2c2a;
-    -webkit-text-fill-color: #ffffeb;
+    background-color: #5288a86f;
   }
 
   .MealsList-item {
-    background-color: #717272;
+    background-color: #3b5a6568;
+    color: #ebeced;
+  }
+
+  .meal-card-title {
+    color: #ebeced;
+  }
+
+  .meal-card-description {
+    color: #ebeced;
+  }
+
+  .navbar {
+    background-color: #fffef8;
+    color: #3b5a6568;
+  }
+
+  .links a {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .homepage-title {
+    color: #ebeced;
+  }
+
+  .homepage-link {
+    color: #ebeced;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar h1 {
+    color: #f1356d;
+    font-size: 1rem;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+  }
+  .homepage-title {
+    color: #ebeced;
+  }
+
+  .links a {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    padding: 23px;
+  }
+
+  .navbar a:hover {
+    color: #f1356d;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .homepage-title {
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+
+  .homepage-description {
+    font-size: 1.5rem;
+  }
+
+  .homepage-link {
+    font-size: 1.5rem;
+
+    margin: 2rem 0;
+  }
+
+  .homepage-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: blur(3px);
+  }
+
+  .overlay-text {
+    padding: 0;
+    width: fit-content;
+  }
+
+  .MealsList-item {
+    border: 1px solid var(--border-color-light-theme);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: fit-content;
+  }
+
+  .MealsList-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .MealsList-container-limited {
+    margin: 1rem;
+  }
+
+  .Meal-detail-header {
+    flex-direction: column;
+  }
+  .MealDetail-image {
+    width: auto;
+  }
+  .MealDetail-info {
+    width: auto;
+    height: auto;
+    margin: 1rem;
+  }
+  .MealDetail-title {
+    font-size: 1.7rem;
+    color: #ebeced;
+  }
+  .MealDetail-description {
+    font-size: 1.4rem;
   }
 }

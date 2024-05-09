@@ -82,3 +82,90 @@
 .share-experience button:hover {
   background-color: #e74c3c; /* Adjust hover color as needed */
 }
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .about-container {
+    background-color: var(--background-color-secondary);
+  }
+
+  .about-paragraph {
+    color: #ebeced;
+  }
+
+  .about-title {
+    color: #5288a8aa;
+  }
+
+  .first-paragraph,
+  .second-paragraph {
+    background-color: #5288a86f;
+    color: #ebeced;
+  }
+
+  .share-experience h2 {
+    color: #ebeced;
+  }
+
+  .share-experience p {
+    color: #ebeced;
+  }
+
+  .share-experience button {
+    background-color: #f0e3ae;
+    color: #201a05;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    width: 40rem;
+    height: 30rem;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  .about-title {
+    font-size: 1.2rem;
+    margin: 0.5rem 0.5rem;
+    text-align: center;
+  }
+
+  .first-paragraph,
+  .second-paragraph {
+    font-size: 1.2rem;
+    margin: 1.5rem;
+  }
+
+  .about-paragraph {
+    width: 23rem;
+    font-size: 1rem;
+  }
+
+  .image-about {
+    display: none;
+  }
+  .share-experience {
+    width: 20rem;
+  }
+
+  .share-experience h2 {
+    font-size: 1.8rem;
+  }
+
+  .share-experience p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .add-meal-form {
+    width: 40rem;
+    height: auto;
+    margin: 2rem;
+  }
+
+  .modal-content h1 {
+    font-size: 1.5rem;
+  }
+}
