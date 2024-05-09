@@ -35,7 +35,7 @@ router.use("/reviews", reviewsRouter);
 
 app.get("/future-meals", async(req, res) => {
   try{
-    const futureMeals = await knex("Meal")
+    const futureMeals = await knex("meal")
     .select()
     .where("when", ">", new Date());
     if(futureMeals.length === 0) {
@@ -53,7 +53,7 @@ app.get("/future-meals", async(req, res) => {
 
 app.get("/past-meals", async(reg,res)=>{
   try{
-    const pastMeals = await knex("Meal")
+    const pastMeals = await knex("meal")
     .where("when", "<", new Date())
     .select();
     if(pastMeals.length === 0){
@@ -70,7 +70,7 @@ app.get("/past-meals", async(reg,res)=>{
 
 app.get("/all-meals", async(reg, res)=>{
   try{
-    const allMeals = await knex("Meal")
+    const allMeals = await knex("meal")
     .select()
     .orderBy("id");
     if(allMeals.length === 0){
@@ -86,7 +86,7 @@ app.get("/all-meals", async(reg, res)=>{
 
 app.get("/first-meal", async (req, res) => {
   try {
-    const firstMeal = await knex("Meal")
+    const firstMeal = await knex("meal")
       .select()
       .orderBy("id")
       .first();
@@ -105,9 +105,9 @@ app.get("/first-meal", async (req, res) => {
 
 app.get("/last-meal", async (req, res) => {
   try {
-    const lastMeal = await knex("Meal")
+    const lastMeal = await knex("meal")
       .select()
-      .where("id", '=', knex("Meal").max('id'));
+      .where("id", '=', knex("meal").max('id'));
 
     if (lastMeal.length > 0) {
       res.status(200).json(lastMeal);
