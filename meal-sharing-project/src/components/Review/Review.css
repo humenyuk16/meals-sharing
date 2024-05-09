@@ -76,8 +76,8 @@
 }
 
 .Review-item {
-  width: calc(33.33% - 20px);
-  margin-bottom: 20px;
+  width: calc(60% - 20px);
+  margin-bottom: 3rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 10px;
@@ -142,4 +142,21 @@
   font-size: 1.2rem;
   color: var(--text-color-light-theme);
   font-style: italic;
+}
+
+/*Media Queries*/
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #2e2c2a;
+    -webkit-text-fill-color: #ffffeb;
+  }
+
+  .Review-item {
+    background-color: #717272;
+  }
+
+  .star {
+    color: #f6d100;
+  }
 }

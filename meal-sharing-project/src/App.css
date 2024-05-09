@@ -134,7 +134,7 @@ body {
 .MealsList-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  margin-bottom: 4rem;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
@@ -143,7 +143,7 @@ body {
   border: 1px solid var(--border-color-light-theme);
   border-radius: 0.5rem;
   padding: 1rem;
-  width: 28rem;
+  width: 25rem;
 }
 
 .MealsList-item a {
@@ -184,8 +184,8 @@ body {
 
 .meal-card-image {
   margin: 1rem;
-  width: 18rem;
-  height: 23rem;
+  width: 24rem;
+  height: 28rem;
   object-fit: cover;
   border-radius: 0.5rem;
 }
@@ -389,11 +389,11 @@ body {
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #213b33;
+    background-color: #2e2c2a;
     -webkit-text-fill-color: #ffffeb;
   }
 
   .MealsList-item {
-    background-color: #36594e;
+    background-color: #717272;
   }
 }
