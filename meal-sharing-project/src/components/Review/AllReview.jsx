@@ -11,7 +11,9 @@ const AllReview = () => {
       try {
         const reviewsWithMealsData = await Promise.all(
           reviews.map(async (review) => {
-            const response = await fetch(`/api/reviews/${review.id}/withMeal`);
+            const response = await fetch(
+              `https://meals-sharing.onrender.com/api/reviews/${review.id}/withMeal`
+            );
             const data = await response.json();
             return { review, meal: data.meal };
           })
