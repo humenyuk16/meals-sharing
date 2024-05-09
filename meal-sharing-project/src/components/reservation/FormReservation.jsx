@@ -36,7 +36,7 @@ const ReservationForm = ({ mealId, onSuccess }) => {
 
   return (
     <div className="ReservationForm">
-      <h2>Make a reservation</h2>
+      <h2 className="ReservationForm-title">Make a reservation</h2>
       {success && <div>Reservation successful!</div>}
       <ReservationFormInputs mealId={mealId} onSubmit={handleFormSubmit} />
       {error && <div>Error: {error}</div>}
