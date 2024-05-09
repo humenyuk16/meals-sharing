@@ -5,7 +5,7 @@ import knex from "../database.js";
 
 router.get("/", async (req,res) => {
     try{
-        const reservations = await knex("Reservation")    
+        const reservations = await knex("reservation")    
         .select();
         res.json(reservations);
     }catch(error){
@@ -18,7 +18,7 @@ router.get("/", async (req,res) => {
 router.post("/", async (req, res) => {
     try {
       const newReservation = req.body;
-      const reservations = await knex("Reservation")
+      const reservations = await knex("reservation")
       .insert(newReservation);
       res.status(201).json(reservations);
     } catch (error) {
@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
   router.get("/:id", async(req,res)=>{
   try{
     const reservationlId = req.params.id
-    const reservations = await knex("Reservation")
+    const reservations = await knex("reservation")
     .where("id","=", reservationlId)
     .select();
   
@@ -51,7 +51,7 @@ router.put("/:id", async(req,res)=>{
     try{
       const reservationlId = req.params.id
       const updateReservation = req.body
-      const reservations = await knex("Reservation")
+      const reservations = await knex("reservation")
       .where("id","=", reservationlId)
       .update(updateReservation);
       if(reservations === 0){
@@ -69,7 +69,7 @@ router.put("/:id", async(req,res)=>{
   router.delete("/:id", async(req,res)=>{
     try{
       const reservationId = req.params.id
-      const reservations = await knex("Reservation")
+      const reservations = await knex("reservation")
       .where("id","=", reservationId)
       .del();
       if(reservations === 0){

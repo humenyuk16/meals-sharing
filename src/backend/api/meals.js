@@ -15,20 +15,20 @@ router.get("/", async (req, res) => {
       sortDir
     } = req.query;
 
-    const query = knex("Meal")
+    const query = knex("meal")
       .select([
-        "Meal.id",
-        "Meal.title",
-        "Meal.max_reservations",
-        "Meal.price",
-        "Meal.when",
-        "Meal.description",
-        "Meal.location",
-        "Meal.image_url",
+        "meal.id",
+        "meal.title",
+        "meal.max_reservations",
+        "meal.price",
+        "meal.when",
+        "meal.description",
+        "meal.location",
+        "meal.image_url",
       ])
-      .countDistinct("Reservation.id as total_reservations")
-      .leftJoin("Reservation", "Meal.id", "=", "Reservation.Meal_id")
-      .groupBy("Meal.id", "Meal.title", "Meal.max_reservations", "Meal.price", "Meal.when", "Meal.description", "Meal.location", "Meal.image_url");
+      .countDistinct("reservation.id as total_reservations")
+      .leftJoin("reservation", "meal.id", "=", "reservation.meal_id")
+      .groupBy("meal.id", "meal.title", "meal.max_reservations", "meal.price", "meal.when", "meal.description", "meal.location", "meal.image_url");
 
     
 
@@ -38,7 +38,7 @@ router.get("/", async (req, res) => {
       const price = parseFloat(maxPrice);
 
       if (!isNaN(price) && price >= 0) {
-        query.where("Meal.price", "<=", price);
+        query.where("meal.price", "<=", price);
       } else {
 
        res.status(400).send("Invalid maxPrice");
@@ -48,21 +48,21 @@ router.get("/", async (req, res) => {
     }
 
     if (availableReservations === 'true') {
-      query.having("total_reservations", "<", knex.raw("Meal.max_reservations"));
+      query.having("total_reservations", "<", knex.raw("meal.max_reservations"));
     } else if (availableReservations === 'false') {
-      query.having("total_reservations", ">=", knex.raw("Meal.max_reservations"));
+      query.having("total_reservations", ">=", knex.raw("meal.max_reservations"));
     }
 
     if (title !== undefined) {
-      query.where("Meal.title", "like", `%${title}%`);
+      query.where("meal.title", "like", `%${title}%`);
     }
 
     if (dateAfter !== undefined) {
-      query.where("Meal.when", ">", dateAfter);
+      query.where("meal.when", ">", dateAfter);
     }
 
     if (dateBefore !== undefined) {
-      query.where("Meal.when", "<", dateBefore);
+      query.where("meal.when", "<", dateBefore);
     }
 
 
@@ -73,7 +73,7 @@ router.get("/", async (req, res) => {
 
     if (sortKey !== undefined) {
       const direction = sortDir === 'desc' ? 'desc' : 'asc';
-      query.orderBy(`Meal.${sortKey}`, direction);
+      query.orderBy(`meal.${sortKey}`, direction);
     }
 
     const result = await query;
@@ -90,7 +90,7 @@ router.get("/", async (req, res) => {
 router.get("/all", async (req,res) => {
 
 try{
-    const meals = await knex("Meal")    
+    const meals = await knex("meal")    
     .select();
     res.json(meals);
 }catch(error){
@@ -104,7 +104,7 @@ try{
 router.post("/", async (req, res) => {
   try {
     const newMeal = req.body;
-    const meal = await knex("Meal")
+    const meal = await knex("meal")
     .insert(newMeal);
     res.status(201).json(meal);
   } catch (error) {
@@ -117,7 +117,7 @@ router.post("/", async (req, res) => {
 router.get("/:id", async(req,res)=>{
   try{
     const mealId = req.params.id
-    const meal = await knex("Meal")
+    const meal = await knex("meal")
     .where("id","=", mealId)
     .select();
   
@@ -138,7 +138,7 @@ router.put("/:id", async(req,res)=>{
   try{
     const mealId = req.params.id
     const updatedMeal = req.body
-    const meal = await knex("Meal")
+    const meal = await knex("meal")
     .where("id","=", mealId)
     .update(updatedMeal);
     if(meal === 0){
@@ -157,7 +157,7 @@ router.put("/:id", async(req,res)=>{
 router.delete("/:id", async(req,res)=>{
   try{
     const mealId = req.params.id
-    const meal = await knex("Meal")
+    const meal = await knex("meal")
     .where("id","=", mealId)
     .del();
     if(meal === 0){
@@ -177,7 +177,7 @@ router.get("/:meal_id/reviews", async (req, res) => {
   try {
       const { meal_id } = req.params;
 
-      const reviews = await knex("Review")
+      const reviews = await knex("review")
           .where({ meal_id })
           .select();
 
