@@ -2,11 +2,7 @@ import useFetch from "./useFetch";
 import Meal from "./Meal";
 
 const LimitedMealsList = ({ limit }) => {
-  const {
-    data: allMeals,
-    isLoading,
-    error,
-  } = useFetch("http://127.0.0.1:5001/api/meals");
+  const { data: allMeals, isLoading, error } = useFetch("/api/meals");
 
   if (isLoading) {
     return <div>Loading...</div>;

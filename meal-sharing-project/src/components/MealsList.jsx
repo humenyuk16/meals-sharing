@@ -2,11 +2,7 @@ import useFetch from "./useFetch";
 import Meal from "./Meal";
 
 function MealsList() {
-  const {
-    data: meals,
-    isLoading,
-    error,
-  } = useFetch("http://127.0.0.1:5001/api/meals");
+  const { meals, error, isLoading } = useFetch("/api/meals");
 
   if (isLoading) {
     return <div>Loading...</div>;

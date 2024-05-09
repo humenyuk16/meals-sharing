@@ -1,7 +1,6 @@
-// ReviewForm.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 import Modal from "../Modal";
-import ReviewFormContent from "./FormContent";
+import ReviewFormContent from "./ReviewFormContent";
 
 const ReviewForm = ({ mealId }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +24,7 @@ const ReviewForm = ({ mealId }) => {
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:5001/api/reviews", {
+      const response = await fetch("/api/reviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -4,20 +4,14 @@ import "./Review.css";
 
 const AllReview = () => {
   const [reviewsWithMeals, setReviewsWithMeals] = useState([]);
-  const {
-    data: reviews,
-    isLoading,
-    error,
-  } = useFetch("http://127.0.0.1:5001/api/reviews");
+  const { data: reviews, isLoading, error } = useFetch("/api/reviews");
 
   useEffect(() => {
     const fetchReviewsWithMeals = async () => {
       try {
         const reviewsWithMealsData = await Promise.all(
           reviews.map(async (review) => {
-            const response = await fetch(
-              `http://127.0.0.1:5001/api/reviews/${review.id}/withMeal`
-            );
+            const response = await fetch(`/api/reviews/${review.id}/withMeal`);
             const data = await response.json();
             return { review, meal: data.meal };
           })
