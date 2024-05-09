@@ -36,14 +36,17 @@ const Footer = () => {
       <div className="footer-column">
         <h3>Social Media</h3>
         <div className="footer-social-icons">
-          <a href="https://www.facebook.com">
+          <a href="https://www.facebook.com" target="_blank">
             <img src="/streamline-logos/Facebook-Logo.svg" alt="Facebook" />
           </a>
 
-          <a href="https://www.instagram.com">
+          <a href="https://www.instagram.com" target="_blank">
             <img src="/streamline-logos/Instagram-Logo.svg" alt="Instagram" />
           </a>
-          <a href="https://www.linkedin.com">
+          <a
+            href="https://www.linkedin.com/in/anastasiia-humeniuk-88559b231/"
+            target="_blank"
+          >
             <img src="/streamline-logos/Linkedin-Logo.svg" alt="LinkedIn" />
           </a>
         </div>
