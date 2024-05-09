@@ -7,7 +7,7 @@ import ReviewForm from "./Review/ReviewForm";
 
 const MealDetail = () => {
   const { id } = useParams();
-  const apiUrl = `http://127.0.0.1:5001/api/meals/${id}`;
+  const apiUrl = `/api/meals/${id}`;
   const [meal, setMeal] = useState(null);
   const { data: mealData, isLoading, error } = useFetch(apiUrl);
 
