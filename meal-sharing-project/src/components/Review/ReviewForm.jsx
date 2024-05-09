@@ -24,13 +24,16 @@ const ReviewForm = ({ mealId }) => {
     };
 
     try {
-      const response = await fetch("/api/reviews", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(reviewData),
-      });
+      const response = await fetch(
+        "https://meals-sharing.onrender.com/api/reviews",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(reviewData),
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to submit review.");
       }

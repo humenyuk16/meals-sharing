@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Modal from "../Modal";
 
 const AddMealForm = ({ onSuccess }) => {
@@ -7,7 +7,7 @@ const AddMealForm = ({ onSuccess }) => {
     description: "",
     location: "",
     price: "",
-    when: "",
+    when_date: "",
     max_reservations: "",
     image_url: "",
   });
@@ -27,13 +27,16 @@ const AddMealForm = ({ onSuccess }) => {
         .replace("T", " ");
       setFormData({ ...formData, created_date: currentDate });
 
-      const response = await fetch("/api/meals", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://meals-sharing.onrender.com/api/meals",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       if (response.ok) {
         console.log("Meal added successfully!");
         window.alert("Meal added successfully!");
@@ -85,8 +88,8 @@ const AddMealForm = ({ onSuccess }) => {
         <input
           placeholder="Enter date"
           type="date"
-          name="when"
-          value={formData.when}
+          name="when_date"
+          value={formData.when_date}
           onChange={handleChange}
         />
 

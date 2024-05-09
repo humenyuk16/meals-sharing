@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 
 function useFetch(path) {
-  const baseUrl =
-    "https://dpg-cotlqdocmk4c73auabj0-a.frankfurt-postgres.render.com";
+  const baseUrl = "https://meals-sharing.onrender.com";
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

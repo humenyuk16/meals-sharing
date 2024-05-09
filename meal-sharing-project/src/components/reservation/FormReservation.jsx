@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ReservationFormInputs from "./ReservationFormInputs.jsx";
 
 const ReservationForm = ({ mealId, onSuccess }) => {
@@ -7,13 +7,16 @@ const ReservationForm = ({ mealId, onSuccess }) => {
 
   const makeReservation = async (formData) => {
     try {
-      const response = await fetch("/api/reservations", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://meals-sharing.onrender.com/api/reservations",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         setSuccess(true);
