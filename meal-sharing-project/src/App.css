@@ -58,10 +58,13 @@ body {
 /*Home page*/
 
 .MealsList-container-limited {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 2fr));
-  gap: 2rem;
-  margin: 7rem 2rem 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 5rem;
 }
 
 .homepage {
@@ -107,6 +110,7 @@ body {
   width: 100%;
   height: 600px;
   overflow: hidden;
+  margin-bottom: 3rem;
 }
 .overlay-text {
   position: absolute;
@@ -129,19 +133,19 @@ body {
 
 .MealsList-container {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(350px, 2fr)
-  ); /* Кожна колонка має ширину принаймні 250px, але може збільшуватися відповідно до розміру контейнера */
-  gap: 20px; /* Проміжок між стовпцями */
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 }
 
 .MealsList-item {
   border: 1px solid var(--border-color-light-theme);
-  padding: 10px;
   border-radius: 0.5rem;
+  padding: 1rem;
+  width: 28rem;
 }
+
 .MealsList-item a {
   text-decoration: none;
 }
@@ -179,10 +183,10 @@ body {
 }
 
 .meal-card-image {
+  margin: 1rem;
   width: 18rem;
   height: 23rem;
   object-fit: cover;
-  margin: 2rem 1rem;
   border-radius: 0.5rem;
 }
 
@@ -190,7 +194,6 @@ body {
   cursor: pointer;
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
-  cursor: pointer;
 }
 
 /*Meal Details*/
@@ -231,7 +234,6 @@ body {
   height: 40rem;
   width: 32rem;
   object-fit: cover;
-
   border-radius: 0.5rem;
 }
 
@@ -341,19 +343,6 @@ body {
 }
 .add-meal-button-cancel {
   background-color: #f6a093;
-}
-
-/*Footer*/
-footer {
-  text-align: center;
-  background-color: var(--background-color-secondary);
-  color: var(--text-color-secondary);
-  padding: 1rem 0;
-  margin-top: 3rem;
-}
-
-.footer-rights {
-  font-size: 1.2rem;
 }
 
 /*Modal Form*/
