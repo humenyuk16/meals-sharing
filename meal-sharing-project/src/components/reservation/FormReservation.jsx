@@ -7,7 +7,7 @@ const ReservationForm = ({ mealId, onSuccess }) => {
 
   const makeReservation = async (formData) => {
     try {
-      const response = await fetch("http://127.0.0.1:5001/api/reservations", {
+      const response = await fetch("/api/reservations", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
