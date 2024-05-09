@@ -27,7 +27,7 @@ const AddMealForm = ({ onSuccess }) => {
         .replace("T", " ");
       setFormData({ ...formData, created_date: currentDate });
 
-      const response = await fetch("http://127.0.0.1:5001/api/meals", {
+      const response = await fetch("/api/meals", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
