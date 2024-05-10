@@ -73,7 +73,11 @@ const AllReview = () => {
               </p>
               <hr className="Review-hr" />
               <p className="Meal-review">{meal.title}</p>
-              <p className="Meal-review-description"> {meal.description}</p>
+              <img
+                src={meal.image_url}
+                alt={meal.title}
+                className="review-image"
+              />
             </div>
           </div>
         ))}
