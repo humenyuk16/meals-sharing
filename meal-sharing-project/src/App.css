@@ -437,9 +437,6 @@ body {
     justify-content: center;
     gap: 1px;
   }
-  .homepage-title {
-    color: #ebeced;
-  }
 
   .links a {
     font-size: 1.1rem;
