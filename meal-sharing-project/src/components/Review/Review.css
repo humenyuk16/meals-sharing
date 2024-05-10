@@ -76,7 +76,6 @@
 
 .Review-item {
   width: 24rem;
-  height: 25rem;
   margin: 3rem 2rem;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -143,6 +142,13 @@
   font-style: italic;
 }
 
+.review-image {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
 /*Media Queries*/
 
 @media screen and (max-width: 768px) {
