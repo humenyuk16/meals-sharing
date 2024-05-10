@@ -1,0 +1,5 @@
+routes:
+  - type: rewrite
+    priority: 1
+    source: /.*
+    destination: /index.html
