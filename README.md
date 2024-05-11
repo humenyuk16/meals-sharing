@@ -10,9 +10,11 @@ This is a full-stack web application built with Node.js, Express.js, React and P
 <a href="https://github.com/humenyuk16/meals-sharing"><strong>Explore the docs »</strong></a>
 <br/>
 <br/>
-<a href="https://meals-sharing-1.onrender.com">View Demo .</a>  
-![project_screenshot](/project_img/1.png)
-![project_screenshot](/project_img/2.png)
+<a href="https://meals-sharing-1.onrender.com">View Demo .</a> 
+<br> 
+<br>
+<img src="https://raw.githubusercontent.com/humenyuk16/meals-sharing/main/project_img/1.png" alt="project_screenshot" width="500"/>
+<img src="https://raw.githubusercontent.com/humenyuk16/meals-sharing/main/project_img/2.png" alt="project_screenshot" width="500"/>
 
 </p>
 </div>
