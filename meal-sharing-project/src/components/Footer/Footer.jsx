@@ -52,6 +52,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="footer-rights">&copy; 2024. All rights reserved.</p>
+      <p className="footer-rights">Made with ❤️ by Anastasiia Humeniuk</p>
     </footer>
   );
 };
