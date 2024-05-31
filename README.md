@@ -10,7 +10,7 @@ This is a full-stack web application built with Node.js, Express.js, React and P
 <a href="https://github.com/humenyuk16/meals-sharing"><strong>Explore the docs »</strong></a>
 <br/>
 <br/>
-<a href="https://meals-sharing-1.onrender.com">View Demo .</a> 
+<a href="https://meals-sharing-1.onrender.com">VIEW DEMO</a> 
 <br> 
 <br>
 <img src="https://raw.githubusercontent.com/humenyuk16/meals-sharing/main/project_img/1.png" alt="project_screenshot" width="500"/>
@@ -19,27 +19,24 @@ This is a full-stack web application built with Node.js, Express.js, React and P
 </p>
 </div>
 
-## About The Project
+## ABOUT THE PROJECT
 
-It was created as an individual project task for Hack Your Future Denmark's curriculum.
+It was created as an individual project task for [Hack Your Future Denmark's](https://github.com/HackYourFuture-CPH) curriculum.
+Both the backend  and frontend of the app was deployed on [Render.com](https://render.com).
 
-The backend of the app was deployed on Railway, while the frontend was deployed on Vercel.
-
-The main functionalities of this website are:
+<b>The main functionalities of this website are:<b>
 
 <hr>
-Displaying the meals in the database
-<hr>
-Adding  a meal
-<hr>
-Making a reservation
-<hr>
-Leaving a review
-<hr>
-Displaying the review in the database
+<ul>
+ <li>Displaying the meals in the database</li>
+ <li>Adding  a meal</li>
+ <li>Making a reservation</li>
+ <li>Leaving a review</li>
+ <li>Displaying the review in the database</li>
+</ul>
 <hr>
 
-### Built With
+###  BUILD WITH:
 
 - [React](https://reactjs.org)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -48,12 +45,9 @@ Displaying the review in the database
 - [PostgreSQL](https://www.postgresql.org)
 - [KnexJS](https://knexjs.org)
 
-## What I learned
+## WHAT I LEARNED
 
 During the development of this project, I faced several challenges that helped me learn new skills and technologies. Some of the challenges I faced include deploying a React application, creating a Modal component, and migration to PostgreSQL.
-
 Through these challenges, I was able to gain a better understanding of React, CSS Modules, and Frontend Development in general. I also learned how to work with Express.js, KnexJS, and PostgreSQL to build a full-stack web application.
-
 In addition to these technical skills, I also learned how to manage my time effectively and prioritize tasks to meet deadlines.
-
 Overall, this project was a great learning experience for me and helped me grow as a developer.
