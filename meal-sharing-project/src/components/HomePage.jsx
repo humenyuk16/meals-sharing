@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 import LimitedMealsList from "./LimitedMealsList";
-import SearchBar from "./SearchBar/Search";
 
 const HomePage = () => {
   const numberOfListToShow = 3;
   return (
     <div className="homepage">
-      <SearchBar />
       <h1 className="homepage-title">Meal Sharing</h1>
 
       <div className="overlay">

@@ -25,6 +25,7 @@ const SearchBar = () => {
   };
 
   const handleMealClick = (mealId) => {
+    setQuery("");
     navigate(`/meals/${mealId}`);
   };
 
@@ -33,7 +34,7 @@ const SearchBar = () => {
       <form onSubmit={handleSearch} className="form">
         <input
           type="text"
-          placeholder="🔍 Search meals..."
+          placeholder="Search meals..."
           value={query}
           onChange={handleInputChange}
           className="input"
