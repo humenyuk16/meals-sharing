@@ -22,9 +22,12 @@ const ReservationForm = ({ mealId, onSuccess }) => {
         setSuccess(true);
         onSuccess();
       } else {
+        const errorText = await response.text();
+        console.error("Error making reservation:", errorText);
         throw new Error("Something went wrong. Try again later.");
       }
     } catch (error) {
+      console.error("Error making reservation:", error);
       setError(error.message);
     }
   };

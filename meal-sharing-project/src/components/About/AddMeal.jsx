@@ -25,7 +25,9 @@ const AddMealForm = ({ onSuccess }) => {
         .toISOString()
         .slice(0, 19)
         .replace("T", " ");
-      setFormData({ ...formData, created_date: currentDate });
+
+      const dataToSend = { ...formData, created_date: currentDate };
+      console.log("Data to send:", dataToSend);
 
       const response = await fetch(
         "https://meals-sharing.onrender.com/api/meals",
@@ -34,7 +36,7 @@ const AddMealForm = ({ onSuccess }) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(dataToSend),
         }
       );
       if (response.ok) {
@@ -42,7 +44,9 @@ const AddMealForm = ({ onSuccess }) => {
         window.alert("Meal added successfully!");
         onSuccess();
       } else {
-        throw new Error("Failed to add meal");
+        const errorText = await response.text();
+        console.error("Error adding meal:", errorText);
+        throw new Error(`Failed to add meal: ${errorText}`);
       }
     } catch (error) {
       console.error("Error adding meal:", error.message);
@@ -87,7 +91,7 @@ const AddMealForm = ({ onSuccess }) => {
 
         <input
           placeholder="Enter date"
-          type="date"
+          type="datetime-local"
           name="when_date"
           value={formData.when_date}
           onChange={handleChange}

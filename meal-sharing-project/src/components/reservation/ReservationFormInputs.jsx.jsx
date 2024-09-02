@@ -16,7 +16,15 @@ const ReservationFormInputs = ({ mealId, onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
+
+    const preparedFormData = {
+      ...formData,
+      created_date: new Date().toISOString().slice(0, 19).replace("T", " "),
+      number_of_guests: parseInt(formData.number_of_guests),
+    };
+    console.log("Prepared form data:", preparedFormData);
+
+    onSubmit(preparedFormData);
   };
 
   return (
